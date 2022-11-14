@@ -4,8 +4,8 @@ import SwiftUI
 struct PokemonNamed: View {
     @EnvironmentObject var vm: ViewModel
     let pokemon: Pokemon
-
-
+    
+    
     var body: some View {
         VStack {
             AsyncImage(url: URL(string: BaseURL.image.rawValue +
@@ -19,6 +19,8 @@ struct PokemonNamed: View {
             } placeholder: {
                 ProgressView()
                     .frame(width: 250, height: 250)
+                    .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
+                    .scaleEffect(3)
             }
             Text("\(pokemon.name.capitalized)")
                 .font(.title2)

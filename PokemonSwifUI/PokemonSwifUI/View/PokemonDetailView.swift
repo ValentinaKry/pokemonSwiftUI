@@ -19,6 +19,8 @@ struct PokemonDetailView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                    Text("\(vm.pokemonDetails?.pokemonType.capitalized ?? "")")
+                        .font(.title3)
                     HStack {
                         VStack {
                             Text("\(vm.formatHW(value: vm.pokemonDetails?.weight ?? 0)) kg")
@@ -47,7 +49,9 @@ struct PokemonDetailView: View {
             }
 
         }
+        
         .onAppear {
+
             vm.getDetails(pokemon: pokemon)
         }
     }

@@ -19,15 +19,18 @@ struct DetailPokemon: Codable {
     let height: Int
     let weight: Int
     let name: String
-    //let types : [Types]
+    let types : [Types]
+    var pokemonType: String {
+        return "Types: \(types.map{$0.type.name}.joined(separator: ", "))"
+    }
 }
 
-////MARK: Pockemon's type
-//struct Types: Codable {
-//    let type: Name
-//}
-//
-//struct Name: Codable {
-//    let name: String
-//}
+//MARK: Pockemon's type
+struct Types: Codable {
+    let type: Name
+}
+
+struct Name: Codable {
+    let name: String
+}
 

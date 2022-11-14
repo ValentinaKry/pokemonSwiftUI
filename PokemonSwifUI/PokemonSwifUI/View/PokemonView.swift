@@ -19,6 +19,8 @@ struct PokemonView: View {
             } placeholder: {
                 ProgressView()
                     .frame(width: 250, height: 250)
+                    . progressViewStyle(CircularProgressViewStyle(tint: .yellow))
+                .scaleEffect(3)
             }
         }
     }
